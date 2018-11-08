@@ -20,7 +20,7 @@ public class IssueTokenFlow extends FlowLogic<Void> {
 
     private final ProgressTracker progressTracker = new ProgressTracker();
 
-    public IssueTokenFlow(int amount, String account, Party owner) {
+    public IssueTokenFlow(int amount, String account) {
         this.amount = amount;
         this.account = account;
     }

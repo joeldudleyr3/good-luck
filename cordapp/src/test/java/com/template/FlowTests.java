@@ -34,7 +34,7 @@ public class FlowTests {
 
     @Test
     public void cannotIssueNegativeTokens() throws Exception {
-        IssueTokenFlow flow = new IssueTokenFlow(-1, "Joel", b.getInfo().getLegalIdentities().get(0));
+        IssueTokenFlow flow = new IssueTokenFlow(-1, "Joel");
         CordaFuture future = a.startFlow(flow);
         network.runNetwork();
 
@@ -44,7 +44,7 @@ public class FlowTests {
 
     @Test
     public void canIssuePositiveTokens() throws Exception {
-        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel", b.getInfo().getLegalIdentities().get(0));
+        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel");
         CordaFuture future = a.startFlow(flow);
         network.runNetwork();
         future.get();
@@ -52,7 +52,7 @@ public class FlowTests {
 
     @Test
     public void cannotTransferTokensYouDontHave() throws Exception {
-        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel", b.getInfo().getLegalIdentities().get(0));
+        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel");
         CordaFuture future = a.startFlow(flow);
         network.runNetwork();
         future.get();
@@ -66,7 +66,7 @@ public class FlowTests {
 
     @Test
     public void canTransferTokensYouDoHave() throws Exception {
-        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel", b.getInfo().getLegalIdentities().get(0));
+        IssueTokenFlow flow = new IssueTokenFlow(1, "Joel");
         CordaFuture future = a.startFlow(flow);
         network.runNetwork();
         future.get();
